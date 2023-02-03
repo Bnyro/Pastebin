@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #232a2e;
+  --surface: #3d484d;
+  --text: #d3c6aa;
+  --accent: #dbbc7f;
+  --radius: 0.5rem;
+}
+
+html {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+}
+
+body {
+  min-height: 85vh;
+  padding: 3rem 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+form input[type="submit"] {
+  margin-top: 0.5rem;
+}
+
+textarea {
+  background-color: var(--surface);
+  color: var(--text);
+  border: none;
+  border-radius: var(--radius);
+  padding: 1rem;
+  flex-grow: auto;
+}
+
+textarea:focus {
+  outline: none;
+  border: none;
+}
+
+input[type="submit"] {
+  background-color: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  border-radius: var(--radius);
+  border: none;
+  padding: 0.5rem;
+}

@@ -51,11 +51,28 @@ textarea:focus {
   border: none;
 }
 
-input[type="submit"] {
+input[type="submit"],
+a {
   background-color: var(--surface);
   color: var(--text);
   cursor: pointer;
+  text-decoration: none;
   border-radius: var(--radius);
   border: none;
   padding: 0.5rem;
+}
+
+input[type="submit"]:hover,
+a:hover {
+  filter: brightness(0.9);
+}
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row * {
+  margin: 0.3rem;
 }

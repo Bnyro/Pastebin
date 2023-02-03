@@ -1,10 +1,9 @@
 package entities
 
-import "gorm.io/gorm"
-
 type Entry struct {
-	gorm.Model
-	Title 	string `json:"title"`
-	Content string `json:"content"`
-	Expires uint   `json:"expires"`
+	ID		uint32 `gorm:"primaryKey;autoIncrement:true"`
+	UUID	string `json:"uuid"`
+	Title 	string `json:"title" form:"title"`
+	Content string `json:"content" form:"content"`
+	Expires uint   `json:"expires" form:"expires"`
 }

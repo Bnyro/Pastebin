@@ -9,8 +9,7 @@ import (
 )
 
 func Format(text string) string {
-	// lexer := lexers.Analyse(text)
-	lexer := lexers.Get("python")
+	lexer := lexers.Analyse(text)
 	if lexer == nil {
 		lexer = lexers.Fallback
 	}
@@ -18,7 +17,7 @@ func Format(text string) string {
 	if style == nil {
 	  	style = styles.Fallback
 	}
-	formatter := html.New(html.Standalone(true))
+	formatter := html.New()
 	iterator, err := lexer.Tokenise(nil, text)
 	writer := new(strings.Builder)
 	err = formatter.Format(writer, style, iterator)

@@ -7,7 +7,7 @@
   --surface: #3d484d;
   --text: #d3c6aa;
   --accent: #dbbc7f;
-  --radius: 0.5rem;
+  --radius: 0.8rem;
 }
 
 html {
@@ -76,4 +76,11 @@ a:hover {
 
 .flex-row * {
   margin: 0.3rem;
+}
+
+pre {
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  border-radius: var(--radius);
 }

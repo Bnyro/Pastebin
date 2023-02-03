@@ -23,7 +23,7 @@ func main() {
 	app.Static("/static", "./static")
 	app.Get("/", handlers.Home)
 	app.Post("/", handlers.Create)
-	app.Get("/:id", handlers.Read)
+	app.Get("/:uuid", handlers.Read)
 
 	url := flag.String("addr", ":8080", "addr to listen on")
 	flag.Parse()

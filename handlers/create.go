@@ -1,9 +1,10 @@
 package handlers
 
 import (
+	"os"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"
-	"github.com/pastebin/database"
 	"github.com/pastebin/entities"
 )
 
@@ -13,6 +14,12 @@ func Create(c *fiber.Ctx) error {
 		return c.SendStatus(fiber.StatusInternalServerError)
 	}
 	entry.UUID = uuid.NewString()
-	database.Db.Create(entry)
+
+	os.Mkdir("./files", 0755)
+	err := os.WriteFile("./files/" + entry.UUID, []byte(entry.Content), 0755)
+	if err != nil {
+		panic(err)
+	}
+
 	return c.Render("created", entry)
 }

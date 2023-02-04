@@ -7,13 +7,10 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/template/html"
-	"github.com/pastebin/database"
 	"github.com/pastebin/handlers"
 )
 
 func main() {
-	database.Init()
-
 	engine := html.New("./templates", ".html")
 	app := fiber.New(fiber.Config{
 		Views: engine,

@@ -23,7 +23,10 @@ func main() {
 	app.Get("/:uuid", handlers.Read)
 
 	url := flag.String("addr", ":8080", "addr to listen on")
+	path := flag.String("path", "./files/", "path to store in")
 	flag.Parse()
+	
+	handlers.RootPath = *path
 
 	log.Fatal(app.Listen(*url))
 }
